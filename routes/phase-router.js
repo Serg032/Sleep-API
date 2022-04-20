@@ -39,8 +39,8 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  const { start, end, hours, quality } = req.body;
-  const sql = `UPDATE phases set start = '${start}', end = '${end}', hours = '${hours}', quality = '${quality}' WHERE id = ${id}`;
+  const { date, start, end, hours, quality } = req.body;
+  const sql = `UPDATE phases SET date = '${date}', start = '${start}', end = '${end}', hours = '${hours}', quality = '${quality}' WHERE id = ${id}`;
 
   connection.query(sql, (err) => {
     if (err) throw err;
